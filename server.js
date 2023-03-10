@@ -1,12 +1,28 @@
-const fs = require("fs")
 const express = require("express")
+const path = require("path")
+const api = require('./Develop/routes/index.js')
+const PORT = process.env.PORT || 3000
+
 const app = express()
 
+app.use(express.json())
+
+app.use('/api', api)
+
+app.use(express.static('public'))
 
 
-app.get('/',(req,res)=> {
-    console.log('testing');
-    res.render('index');
-})
 
-app.listen(3000)
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '/Develop/public/index.html'))
+)
+
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/Develop/public/notes.html'))
+)
+
+
+
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT}`)
+)
