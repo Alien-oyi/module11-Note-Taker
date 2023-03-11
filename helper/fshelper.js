@@ -18,8 +18,8 @@ const readAndAppend = (content, file) => {
       parsedData.push(content);
       writeToFile(file, parsedData);
     }
-  });
-};
+  })}
+
 
 module.exports = {
     readFromFile,

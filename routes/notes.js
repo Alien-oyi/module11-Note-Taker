@@ -2,10 +2,16 @@ const notes = require('express').Router();
 const uuid = require('uuid');
 const {readFromFile, readAndAppend, writeToFile} = require('../helper/fsHelper');
 
+
 // GET
 notes.get('/', (req, res) => {
     readFromFile('./db/db.json')
-    .then((data) => res.json(JSON.parse(data)));
+    .then((data) => {
+
+      res.json(JSON.parse(data))
+    });
+
+
   })
 
   
