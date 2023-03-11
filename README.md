@@ -11,13 +11,13 @@ https://module11-noter-taker.herokuapp.com/
 ![App Screenshot](https://github.com/Alien-oyi/module11-Note-Taker/blob/main/imgs/Screenshot%20(166).png?raw=true)
 
 ## Installation
-npm i <br /> npm i express
+npm i <br /> npm i express <br />npm i uuid
 
 ## Usage
 None
 
 ## Contributing
-None
+Max Ohsawa
 
 
 ## If you have any questions?
