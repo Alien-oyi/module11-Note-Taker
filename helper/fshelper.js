@@ -19,10 +19,23 @@ const readAndAppend = (content, file) => {
       writeToFile(file, parsedData);
     }
   })}
+const deleteFile = (id) => {
+  fs.readFile('./db/db.json','utf8',(err,data) => {
+    var parseNote = JSON.parse(data)
+    console.log(parseNote);
+    var filterNote = parseNote.filter((note)=>note.id!==id)
+    
+    fs.writeFile('./db/db.json', JSON.stringify(filterNote, null, 4), (err) =>
+    err ? console.error(err) : console.info(`\nData written to dbfolder`))
+  
+  })
+}
+
 
 
 module.exports = {
     readFromFile,
     writeToFile,
-    readAndAppend
+    readAndAppend,
+    deleteFile
 }
